@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from fractions import Fraction
 
 class fpo():
     def __init__(self, rawData):
@@ -49,11 +50,7 @@ class fpo():
             print("NaN")
 
         else:
-            print(decimal_number)
-
-        #print(e)
-        #print(frac)
-
+            print("Decimal:    %s\nFraction:    %s" % (decimal_number, Fraction(decimal_number)))
 
 
 
