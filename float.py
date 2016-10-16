@@ -70,7 +70,10 @@ class fpo():
         if self.data['sign'] == '1':
             decimal_number *= -1
         if not '0' in self.data['exp'] and not '1' in self.data['frac']:
-            print("inf")
+            if self.data['sign'] == '1':
+                print("-inf")
+            else:
+                print("inf")
         elif not '0' in self.data['exp'] and '1' in self.data['frac']:
             print("NaN")
 
