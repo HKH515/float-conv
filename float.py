@@ -44,7 +44,7 @@ class fpo():
         leftSide = decimal.round()
         rightSide = decimal - leftSide
 
-    def __calculate_binary(self):
+    def calculate_binary(self):
         """
         Converts a human readable decimal number or fraction to an IEEE 754 representation of a floating point number
         """
@@ -52,7 +52,7 @@ class fpo():
 
 
 
-    def __calculate_decimal(self):
+    def calculate_decimal(self):
         """
         Converts an IEEE 754 representation of a floating point number to a human readable decimal number or fraction
         """
@@ -89,7 +89,7 @@ class fpo():
         pass
 
     def print_decimal(self):
-        decimal_number = self.__calculate_decimal()
+        decimal_number = self.calculate_decimal()
         if decimal_number != "NaN" and "inf" not in str(decimal_number):
             print("Decimal:    %s\nFraction:    %s" % (decimal_number, Fraction(decimal_number)))
         else:
