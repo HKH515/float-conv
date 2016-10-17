@@ -42,15 +42,17 @@ class fpo():
     def __decimal_to_binary(self, decimal):
         pass
         leftSide = decimal.round()
-        rightSide = decimal - leftSide;
+        rightSide = decimal - leftSide
 
-    def print_binary(self):
+    def __calculate_binary(self):
         """
         Converts a human readable decimal number or fraction to an IEEE 754 representation of a floating point number
         """
         pass
 
-    def print_decimal(self):
+
+
+    def __calculate_decimal(self):
         """
         Converts an IEEE 754 representation of a floating point number to a human readable decimal number or fraction
         """
@@ -71,15 +73,27 @@ class fpo():
             decimal_number *= -1
         if not '0' in self.data['exp'] and not '1' in self.data['frac']:
             if self.data['sign'] == '1':
-                print("-inf")
+                return("-inf")
             else:
-                print("inf")
+                return("inf")
         elif not '0' in self.data['exp'] and '1' in self.data['frac']:
-            print("NaN")
+            return("NaN")
 
         else:
-            print("Decimal:    %s\nFraction:    %s" % (decimal_number, Fraction(decimal_number)))
+            return(decimal_number)
 
+    def print_binary(self):
+        """
+        Converts a human readable decimal number or fraction to an IEEE 754 representation of a floating point number
+        """
+        pass
+
+    def print_decimal(self):
+        decimal_number = self.__calculate_decimal()
+        if decimal_number != "NaN" and "inf" not in str(decimal_number):
+            print("Decimal:    %s\nFraction:    %s" % (decimal_number, Fraction(decimal_number)))
+        else:
+            print(decimal_number)
 
 
 if __name__ == "__main__":
